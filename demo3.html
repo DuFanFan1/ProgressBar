@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>通过CSS3制作进度条</title>
+	<style type="text/css">
+		.loading{
+			width: 100%;
+			height:100%;
+			background: #fff;
+			position: fixed;
+			z-index: 1000;
+		}
+		.pic{
+			width: 64px;
+			height: 64px;
+			position: absolute;
+			top:0;
+			left:0;
+			bottom: 0;
+			right: 0;
+			margin:auto;
+		}
+		.loading .pic i {
+        float: left;
+        display: block;
+        width: 6px;
+        height: 50px;
+        margin: 0 2px;
+        background-color: green;
+        -webkit-transform: scaleY(0.4);
+        -ms-transform: scaleY(0.4);
+        transform: scaleY(0.4);
+        -webkit-animation: load 1.2s infinite;
+        animation: load 1.2s infinite;
+      }
+      .loading .pic i:nth-child(2) {
+        -webkit-animation-delay: .1s;
+        animation-delay: .1s;
+      }
+      .loading .pic i:nth-child(3) {
+        -webkit-animation-delay: .2s;
+        animation-delay: .2s;
+      }
+      .loading .pic i:nth-child(4) {
+        -webkit-animation-delay: .3s;
+        animation-delay: .3s;
+      }
+      .loading .pic i:nth-child(5) {
+        -webkit-animation-delay: .4s;
+        animation-delay: .4s;
+      }
+      @-webkit-keyframes load {
+        0%,
+        40%,
+        100% {
+          -webkit-transform: scaleY(0.4);
+          transform: scaleY(0.4);
+        }
+        20% {
+          -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+        }
+      }
+      @keyframes load {
+        0%,
+        40%,
+        100% {
+          -webkit-transform: scaleY(0.4);
+          transform: scaleY(0.4);
+        }
+        20% {
+          -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+        }
+      }
+	</style>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		document.onreadystatechange = function(){
+			if(document.readyState == "complete"){
+				$(".loading").fadeOut();
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="loading">
+		<div class="pic">
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+		</div>
+	</div>
+	<img src="https://img02.sogoucdn.com/app/a/100520093/ca86e620b9e623ff-d72d635343d5bade-dcf2acda7a45cb44f172db138bdf8d2d.jpg">
+	<img src="https://img03.sogoucdn.com/app/a/100520093/18b802f0eb835f7e-f90693c95e6a93be-c5ff88da9ec2f2faf772a07b8a56687d.jpg">
+	<img src="https://img01.sogoucdn.com/app/a/100520093/013d20860a59d114-df5b4a05f7c173f3-7e866343d6ed14122f7512cd53e13aad.jpg">
+	<img src="https://i04piccdn.sogoucdn.com/2ad52fc80885b325">
+	<img src="https://i03piccdn.sogoucdn.com/2972488e2e58edea">
+</body>
+</html>
